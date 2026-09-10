@@ -50,6 +50,9 @@ while (true)
             System.Console.WriteLine("Ogilitigt nummer.");
             continue;
         }
+        // Varan tas bort från listan
+        items.RemoveAt(index);
+        price.RemoveAt(index);
     }
     else
     {
