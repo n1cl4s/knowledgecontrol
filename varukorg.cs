@@ -11,7 +11,27 @@ while (true)
 
     if (menuChoice == "1")
     {
-        // Menyval 1: Lägg till vara
+    // Användaren får mata in varan och priset
+    System.Console.WriteLine("Vad heter varan?");
+    string Item = Console.ReadLine();
+    System.Console.WriteLine("Vad kostar varan?");
+    string priceInput = Console.ReadLine();
+
+    // Kollar så det är rätt inmatning
+    bool success = int.TryParse(priceInput, out int Price);
+
+    if (success)
+{
+    // Lägger till varan i listan OM matningen är rätt
+   items.Add(Item);
+   price.Add(Price);
+}
+else
+{
+    // Annars om det är fel inmatning så får användaren en ny chans
+    System.Console.WriteLine("Felaktig inmatning, använd heltal");
+}
+
     }
     else if (menuChoice == "2")
     {
