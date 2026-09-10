@@ -3,6 +3,8 @@ List<int> price = new List<int>();
 
 while (true)
 {
+    Console.Clear();
+    System.Console.WriteLine("Välkommen till Varukorgen\n");
     System.Console.WriteLine("\nVälj ett alternativ");
     System.Console.WriteLine("1. Lägg till vara");
     System.Console.WriteLine("2. Ta bort vara");
