@@ -13,8 +13,11 @@ while (true)
         // Listan med varor
         System.Console.WriteLine($"{i + 1}. {items[i]} - {price[i]} kr");
         
-  
+        // Räknar ut totalpris
+        totalSum += price[i];
     }
+        // Skriv ut totalpris
+    System.Console.WriteLine($"Totalt: {totalSum} kr");
 
     System.Console.WriteLine("\nVälj ett alternativ");
     System.Console.WriteLine("1. Lägg till vara");
