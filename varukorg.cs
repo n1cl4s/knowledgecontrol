@@ -5,6 +5,17 @@ while (true)
 {
     Console.Clear();
     System.Console.WriteLine("Välkommen till Varukorgen\n");
+    totalSum = 0;
+
+    // Menyn med varor + totalpris
+    for (int i = 0; i < items.Count; i++)
+    {
+        // Listan med varor
+        System.Console.WriteLine($"{i + 1}. {items[i]} - {price[i]} kr");
+        
+  
+    }
+
     System.Console.WriteLine("\nVälj ett alternativ");
     System.Console.WriteLine("1. Lägg till vara");
     System.Console.WriteLine("2. Ta bort vara");
