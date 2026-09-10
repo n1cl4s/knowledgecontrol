@@ -2,8 +2,6 @@ List<string> items = new List<string>();
 List<int> price = new List<int>();
 int totalSum = 0;
 
-Console.Clear();
-
 while (true)
 {
     Console.Clear();
@@ -49,6 +47,7 @@ while (true)
     {
     // Annars om det är fel inmatning så får användaren en ny chans
     System.Console.WriteLine("Felaktig inmatning, använd heltal");
+    Console.ReadLine();
     }
 
     }
@@ -67,6 +66,7 @@ while (true)
     if (!removeSuccess || index < 0 || index >= items.Count)
         {
             System.Console.WriteLine("Ogilitigt nummer.");
+            Console.ReadLine();
             continue;
         }
         // Varan tas bort från listan
