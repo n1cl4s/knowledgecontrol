@@ -21,21 +21,35 @@ while (true)
     bool success = int.TryParse(priceInput, out int Price);
 
     if (success)
-{
+    {
     // Lägger till varan i listan OM matningen är rätt
    items.Add(Item);
    price.Add(Price);
-}
-else
-{
+    }
+    else
+    {
     // Annars om det är fel inmatning så får användaren en ny chans
     System.Console.WriteLine("Felaktig inmatning, använd heltal");
-}
+    }
 
     }
     else if (menuChoice == "2")
     {
-        // Menyval 2: Ta bort vara
+    // Ta bort en vara
+    System.Console.WriteLine("Vilket nummer har varan du vill ta bort?");
+    string removeInput = Console.ReadLine();
+    // Läser in vilken vara som ska tas bort (nummer)
+    bool removeSuccess = int.TryParse(removeInput, out int removeNumber);
+    // Identifierar varan
+    int index = removeNumber -1;
+    
+    // Om numret är ogiltligt eller finns inte
+    // får man chans till ny inmatning
+    if (!removeSuccess || index < 0 || index >= items.Count)
+        {
+            System.Console.WriteLine("Ogilitigt nummer.");
+            continue;
+        }
     }
     else
     {
