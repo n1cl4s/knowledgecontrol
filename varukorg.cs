@@ -8,13 +8,16 @@ while (true)
     System.Console.WriteLine("Välkommen till Varukorgen\n");
     totalSum = 0;
 
+    // Sortering av varor så att dyrast vara visas högst upp
     int[] priceArray = price.ToArray();
     string[] itemsArray = items.ToArray();
 
     Array.Sort(priceArray, itemsArray);
+    // Störst går först!
     Array.Reverse(priceArray);
     Array.Reverse(itemsArray);
 
+    // Lägger tillbaka i dom riktiga listorna
     items = itemsArray.ToList();
     price = priceArray.ToList();
 
@@ -83,7 +86,20 @@ while (true)
         items.RemoveAt(index);
         price.RemoveAt(index);
     }
-
+    else if (menuChoice == "dyrast")
+    {
+        // Om det inte finns några varor tillagda
+        if (items.Count == 0)
+        {
+            System.Console.WriteLine("Finns inga varor tillagda");
+        }
+        else
+        {
+            // Annars skriv ut den dyraste varan
+            System.Console.WriteLine($"Dyraste varan är: {items[0]} - {price[0]} kr");
+        }
+        Console.ReadLine();
+    }
 
     else
     {
