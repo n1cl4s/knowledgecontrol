@@ -2,11 +2,21 @@ List<string> items = new List<string>();
 List<int> price = new List<int>();
 int totalSum = 0;
 
+
 while (true)
 {
-    Console.Clear();
     System.Console.WriteLine("Välkommen till Varukorgen\n");
     totalSum = 0;
+
+    int[] priceArray = price.ToArray();
+    string[] itemsArray = items.ToArray();
+
+    Array.Sort(priceArray, itemsArray);
+    Array.Reverse(priceArray);
+    Array.Reverse(itemsArray);
+
+    items = itemsArray.ToList();
+    price = priceArray.ToList();
 
     // Menyn med varor + totalpris
     for (int i = 0; i < items.Count; i++)
@@ -30,9 +40,9 @@ while (true)
     {
     // Användaren får mata in varan och priset
     System.Console.WriteLine("Vad heter varan?");
-    string Item = Console.ReadLine();
+    string Item = Console.ReadLine() ?? "";
     System.Console.WriteLine("Vad kostar varan?");
-    string priceInput = Console.ReadLine();
+    string? priceInput = Console.ReadLine();
 
     // Kollar så det är rätt inmatning
     bool success = int.TryParse(priceInput, out int Price);
@@ -55,7 +65,7 @@ while (true)
     {
     // Ta bort en vara
     System.Console.WriteLine("Vilket nummer har varan du vill ta bort?");
-    string removeInput = Console.ReadLine();
+    string? removeInput = Console.ReadLine();
     // Läser in vilken vara som ska tas bort (nummer)
     bool removeSuccess = int.TryParse(removeInput, out int removeNumber);
     // Identifierar varan
@@ -73,6 +83,8 @@ while (true)
         items.RemoveAt(index);
         price.RemoveAt(index);
     }
+
+
     else
     {
         // ERROR 404
